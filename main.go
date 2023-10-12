@@ -15,7 +15,7 @@ import (
 	_ "github.com/microsoft/go-mssqldb"
 	_ "github.com/sijms/go-ora/v2"
 
-	"github.com/flpgst/go-reportgen-producer/postgres"
+	"github.com/flpgst/go-reportgen-producer/models"
 	"github.com/xo/dburl"
 	"github.com/xo/dburl/passfile"
 )
@@ -36,7 +36,7 @@ func run(ctx context.Context, verbose bool, dsn string) error {
 			fmt.Printf("-------------------------------------\nQUERY: %s\n  VAL: %v\n\n", s, v)
 		}
 
-		postgres.SetLogger(logger)
+		models.SetLogger(logger)
 	}
 	v, err := user.Current()
 
